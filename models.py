@@ -13,12 +13,12 @@ def get_db_connection():
     try:
         print("Step 2: Establishing database connection...")
         conn = psycopg2.connect(
-        host=os.getenv("host"),
-        port=os.getenv("port"),
-        database=os.getenv("database"),
-        user=os.getenv("user"),
-        password=os.getenv("password")
-        )
+        host=os.getenv("DB_HOST", "yamanote.proxy.rlwy.net"),
+        port=os.getenv("DB_PORT", 49218),
+        database=os.getenv("DB_NAME", "railway"),
+        user=os.getenv("DB_USER", "postgres"),
+        password=os.getenv("DB_PASS", "ZjEcZxoGbQERqgTUbYiLnTHIArAxKYmf")
+    )
         print("Database connection established.")
         return conn
     except Exception as e:
