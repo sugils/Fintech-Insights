@@ -10,11 +10,11 @@ import psycopg2
 
 def get_db_connection():
     conn = psycopg2.connect(
-        host="yamanote.proxy.rlwy.net",
-        port=49218,
-        database="railway",
-        user="postgres",
-        password="ZjEcZxoGbQERqgTUbYiLnTHIArAxKYmf"
+        host=os.getenv("host"),
+        port=os.getenv("port"),
+        database=os.getenv("database"),
+        user=os.getenv("user"),
+        password=os.getenv("password")
     )
     return conn
 
