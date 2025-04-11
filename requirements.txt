@@ -1,7 +1,5 @@
-flask
+Flask
 requests
-openai
-psycopg2-binary
 python-dotenv
-ollama
-openbb
+psycopg2-binary
+google-generativeai
