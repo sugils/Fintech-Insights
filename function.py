@@ -15,6 +15,7 @@ genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 # Step 2: Fetch crypto data from Coingecko
 def fetch_coingecko_data(coin):
     print(f"\n Fetching data for coin: {coin}...")
+    time.sleep(1) 
 
     url = f"https://api.coingecko.com/api/v3/coins/{coin.lower()}"
     
