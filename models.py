@@ -22,16 +22,6 @@ conn = get_db_connection()
 cursor = conn.cursor()
 
 
-# def get_db_connection():
-#     conn = psycopg2.connect(
-#         host="postgresql://postgres:ZjEcZxoGbQERqgTUbYiLnTHIArAxKYmf@yamanote.proxy.rlwy.net:49218/railway",
-#         database="railway",
-#         user="postgres",
-#         password="ZjEcZxoGbQERqgTUbYiLnTHIArAxKYmf"
-#     )
-#     return conn
-# conn = get_db_connection()
-# cursor = conn.cursor()
 def store_data(data):
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS daily_metrics (
