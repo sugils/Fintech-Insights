@@ -3,6 +3,7 @@ import google.generativeai as genai
 import os
 from datetime import datetime
 from dotenv import load_dotenv
+import time
 
 # Step 0: Load environment variables
 print("Loading environment variables...")
