@@ -7,23 +7,17 @@ app = Flask(__name__)
 @app.route("/run-daily-job", methods=["GET"])
 def run_daily_job():
     try:
+         # Step 1: Fetch data from CoinGecko
         coin_list = ["bitcoin", "ethereum", "solana", "cardano", "ripple"]
         failed_coins = []
-
         for coin in coin_list:
             data = fetch_coingecko_data(coin)
             if data:
+                # Step 2: Store raw data in DB
                 store_data(data)
             else:
                 failed_coins.append(coin)
                 print(f"Skipping {coin}: Data fetch failed.")
-
-
-        # Step 1: Fetch data from CoinGecko
-        data = fetch_coingecko_data("bitcoin")
-
-        # Step 2: Store raw data in DB
-        store_data(data)
 
         # Step 3: Process all records and generate AI insights
         insights= generate_insight(data)
