@@ -1,6 +1,6 @@
 from flask import Flask, jsonify
 from function import fetch_coingecko_data,generate_insight
-from models import store_data
+from models import store_data,store_recommendation
 
 app = Flask(__name__)
 
