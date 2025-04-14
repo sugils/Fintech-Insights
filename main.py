@@ -19,11 +19,13 @@ def run_daily_job():
 
         # Step 3: Process all records and generate AI insights
         insights= generate_insight(data)
+        store_insights  = store_recommendation(insights)
 
         return jsonify({
             "status": "success",
             "message": "Job completed and insights generated.",
-            "insights_generated":insights
+            "insights_generated":insights,
+            "insertion_status":store_insights
         }), 200
 
     except Exception as e:
